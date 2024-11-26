@@ -18,7 +18,7 @@ const products = [
     image: "/images/tshirt,white.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Vit T-Shirt"),
   },
   {
@@ -30,7 +30,7 @@ const products = [
     image: "/images/tshirt,white,branded.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Vit T-Shirt med tryck"),
   },
   {
@@ -42,7 +42,7 @@ const products = [
     image: "/images/tshirt,orange.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Orange T-Shirt"),
   },
   {
@@ -54,7 +54,7 @@ const products = [
     image: "/images/pinkshirt.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Rosa T-Shirt"),
   },
   {
@@ -66,7 +66,7 @@ const products = [
     image: "/images/pants,orange.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Orangea Byxor"),
   },
   {
@@ -78,7 +78,7 @@ const products = [
     image: "/images/pants,beige.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Beige Byxor"),
   },
   {
@@ -90,7 +90,7 @@ const products = [
     image: "/images/manchester,jacket.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Manchester Jacka"),
   },
   {
@@ -102,7 +102,7 @@ const products = [
     image: "/images/duffelbag.jpg",
     isLiked: true,
     lorem:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Magväska"),
   },
 ];
