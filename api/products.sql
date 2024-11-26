@@ -7,3 +7,5 @@ CREATE TABLE products (
     sku,
     price
 );
+
+DELETE FROM products;
