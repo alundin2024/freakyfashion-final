@@ -1,6 +1,13 @@
 var express = require("express");
 var router = express.Router();
 
+function generateSlug(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 const products = [
   {
     id: 1,
@@ -12,6 +19,7 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Vit T-Shirt"),
   },
   {
     id: 2,
@@ -23,6 +31,7 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Vit T-Shirt med tryck"),
   },
   {
     id: 3,
@@ -34,6 +43,7 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Orange T-Shirt"),
   },
   {
     id: 4,
@@ -45,6 +55,7 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Rosa T-Shirt"),
   },
   {
     id: 5,
@@ -56,6 +67,7 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Orangea Byxor"),
   },
   {
     id: 6,
@@ -67,6 +79,7 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Beige Byxor"),
   },
   {
     id: 7,
@@ -78,6 +91,7 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Manchester Jacka"),
   },
   {
     id: 8,
@@ -89,13 +103,14 @@ const products = [
     isLiked: true,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Magväska"),
   },
 ];
 
 /* GET product-details page. */
-router.get("/:id", function (req, res, next) {
-  const productId = parseInt(req.params.id);
-  const product = products.find((p) => p.id === productId);
+router.get("/:slug", function (req, res, next) {
+  const productSlug = req.params.slug;
+  const product = products.find((p) => p.slug === productSlug);
 
   if (!product) {
     // Handle case when product is not found
