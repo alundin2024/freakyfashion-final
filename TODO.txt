@@ -1,0 +1,6 @@
+index.ejs är klar.
+product-details.ejs behöver justering av CSS samt spots behöver genereras dynamiskt.
+admin.ejs behöver kunna ladda in produkter från databas.
+
+När ovan är fixat är G KLART.
+
