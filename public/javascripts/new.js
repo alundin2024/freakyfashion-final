@@ -19,7 +19,7 @@ let saveNewProduct = (event) => {
     .then((response) => {
       if (response.ok) {
         console.log("Product saved successfully!");
-        window.location.href = "/admin/products"
+        window.location.href = "/admin/products";
       } else {
         console.error("Failed to save the product.");
       }
@@ -28,7 +28,7 @@ let saveNewProduct = (event) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    const productForm = document.getElementById("productForm");
-    console.log(productForm);
-    productForm.addEventListener("submit", saveNewProduct);
+  const productForm = document.getElementById("productForm");
+  console.log(productForm);
+  productForm.addEventListener("submit", saveNewProduct);
 });
