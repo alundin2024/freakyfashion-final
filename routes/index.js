@@ -1,5 +1,12 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+
+function generateSlug(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 const products = [
   {
@@ -9,10 +16,10 @@ const products = [
     brand: "Levis",
     price: "299 SEK",
     image: "/images/tshirt,white.jpg",
-    isNew: false,
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Vit T-Shirt"),
   },
   {
     id: 2,
@@ -21,10 +28,10 @@ const products = [
     brand: "Brothers",
     price: "399 SEK",
     image: "/images/tshirt,white,branded.jpg",
-    isNew: false,
     isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Vit T-Shirt med tryck"),
   },
   {
     id: 3,
@@ -33,10 +40,10 @@ const products = [
     brand: "Zalando",
     price: "349 SEK",
     image: "/images/tshirt,orange.jpg",
-    isNew: false,
     isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Orange T-Shirt"),
   },
   {
     id: 4,
@@ -45,10 +52,10 @@ const products = [
     brand: "Minus",
     price: "349 SEK",
     image: "/images/pinkshirt.jpg",
-    isNew: false,
     isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Rosa T-Shirt"),
   },
   {
     id: 5,
@@ -57,10 +64,10 @@ const products = [
     brand: "Lindex",
     price: "599 SEK",
     image: "/images/pants,orange.jpg",
-    isNew: false,
     isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Orangea Byxor"),
   },
   {
     id: 6,
@@ -69,10 +76,10 @@ const products = [
     brand: "Gucci",
     price: "1999 SEK",
     image: "/images/pants,beige.jpg",
-    isNew: false,
     isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Beige Byxor"),
   },
   {
     id: 7,
@@ -81,10 +88,10 @@ const products = [
     brand: "Levis",
     price: "2495 SEK",
     image: "/images/manchester,jacket.jpg",
-    isNew: false,
     isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Manchester Jacka"),
   },
   {
     id: 8,
@@ -93,16 +100,16 @@ const products = [
     brand: "Hugo Boss",
     price: "995 SEK",
     image: "/images/duffelbag.jpg",
-    isNew: false,
     isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."',
+    slug: generateSlug("Magväska"),
   },
 ];
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Freaky Fashion', products});
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Freaky Fashion", products });
   console.log("Funkar!");
 });
 
