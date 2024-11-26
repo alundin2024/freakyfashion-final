@@ -32,15 +32,16 @@ fetch('/admin/api/products')
 
 }
 
-
 let saveNewProduct = (event) => {
+  console.log("Innan prev");
   event.preventDefault(); // Prevent form submission
+  console.log("Efter prev");
 
   const form = document.getElementById("productForm");
   const formData = new FormData(form);
   const product = Object.fromEntries(formData.entries());
 
-  fetch("/admin/new", {
+  fetch("/api/new", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Site is ready now");
     console.log(document.getElementById("loadProductsButton"));
     document.getElementById("loadProductsButton1").addEventListener("click", loadProducts);
-    document.getElementById("loadProductsButton2").addEventListener("click", saveNewProduct);
     const productForm = document.getElementById("productForm");
+    console.log(productForm);
     productForm.addEventListener("submit", saveNewProduct);
 });
