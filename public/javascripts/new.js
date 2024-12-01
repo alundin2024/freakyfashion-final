@@ -2,7 +2,7 @@ console.log("Admin Client Side");
 
 let saveNewProduct = (event) => {
   console.log("Innan prev");
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault();
   console.log("Efter prev");
 
   const form = document.getElementById("productForm");
