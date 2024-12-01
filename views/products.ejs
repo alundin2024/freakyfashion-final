@@ -6,8 +6,10 @@
     <title><%=title%></title>
     <link rel="stylesheet" href="/stylesheets/style,products.css" />
     <link rel="stylesheet" href="/stylesheets/magnifier.css" />
+    <link rel="stylesheet" href="/stylesheets/globals.css" />
   </head>
   <body>
+    <div class ="container">
     <header>
       <section class="header">
         <div class="mainlogoContainer">
@@ -88,7 +90,7 @@
       <section class="liknandeProdukter">
        
         
-        <div class="spotsDetails">x
+        <div class="spotsDetails">
           <section class="products">
             <% products.forEach(product => { %>
             <div class="first-product-shown other-products">
@@ -204,5 +206,6 @@
         </div>
       </div>
     </footer>
+  </div>
   </body>
 </html>
