@@ -10,13 +10,13 @@ let loadProducts = ()=>{
 
       console.log("clear the table of old row before we add new");
 
-      //fetch the product list table
+      
       const list = document.getElementById("productList");
       
-      //set innerhtml to nothing to clear the table from old data (if present)
+      
       list.innerHTML = '';
 
-      //create a new headerRow and add to the list
+      
       let headerRow = document.createElement('tr');
       headerRow.innerHTML = '<th>Namn</th><th>SKU</th><th>Pris</th>';
       list.appendChild(headerRow);
@@ -47,7 +47,7 @@ let loadProducts = ()=>{
 
 let saveNewProduct = (event) => {
   console.log("Innan prev");
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault();
   console.log("Efter prev");
 
   const form = document.getElementById("productForm");
@@ -71,21 +71,6 @@ let saveNewProduct = (event) => {
     })
     .catch((error) => console.error("Error:", error));
 };
-
-/*let saveNewProduct = ()=>{
-    const response = fetch("/admin/api/new", {
-    method: "POST",
-    body: JSON.stringify({ 
-        productName: "",
-        description: "",
-        image: "",
-        brand: "",
-        sku: "",
-        price: "",
-
-    }),
-    });
-}*/
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Site is ready now");
