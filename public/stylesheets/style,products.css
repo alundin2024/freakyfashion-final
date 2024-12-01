@@ -1,8 +1,4 @@
-* {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    margin: 0px;
-    padding: 0px;
-  }
+
   .topmenu {
     padding-bottom: 20px;
   }
@@ -279,6 +275,12 @@
     }
     nav > a {
       margin-right: 10px;
+    }
+
+    .products {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr;
     }
     
     .product {
