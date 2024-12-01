@@ -16,7 +16,7 @@ const products = [
     brand: "Levis",
     price: "299 SEK",
     image: "/images/tshirt,white.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Vit T-Shirt"),
@@ -28,7 +28,7 @@ const products = [
     brand: "Brothers",
     price: "399 SEK",
     image: "/images/tshirt,white,branded.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Vit T-Shirt med tryck"),
@@ -40,7 +40,7 @@ const products = [
     brand: "Zalando",
     price: "349 SEK",
     image: "/images/tshirt,orange.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Orange T-Shirt"),
@@ -52,7 +52,7 @@ const products = [
     brand: "Minus",
     price: "349 SEK",
     image: "/images/pinkshirt.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Rosa T-Shirt"),
@@ -64,7 +64,7 @@ const products = [
     brand: "Lindex",
     price: "599 SEK",
     image: "/images/pants,orange.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Orangea Byxor"),
@@ -76,7 +76,7 @@ const products = [
     brand: "Gucci",
     price: "1999 SEK",
     image: "/images/pants,beige.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Beige Byxor"),
@@ -88,7 +88,7 @@ const products = [
     brand: "Levis",
     price: "2495 SEK",
     image: "/images/manchester,jacket.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Manchester Jacka"),
@@ -100,7 +100,7 @@ const products = [
     brand: "Hugo Boss",
     price: "995 SEK",
     image: "/images/duffelbag.jpg",
-    isLiked: true,
+    isLiked: false,
     lorem:
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."',
     slug: generateSlug("Magväska"),
@@ -120,10 +120,15 @@ router.get("/:slug", function (req, res, next) {
     });
   }
 
+  const randomProducts = products
+    .filter(p => p.slug !== productSlug)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
+
   res.render("products", {
     title: product.name,
     product: product, // Pass single product instead of products array
-    products: products, // Keep this if you need it for "Liknande produkter" section
+    products: randomProducts, // Keep this if you need it for "Liknande produkter" section
   });
 });
 
