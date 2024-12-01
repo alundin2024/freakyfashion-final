@@ -43,7 +43,7 @@ router.get("/products/all", function (req, res, next) {
   console.log("Funkar definitvt!");
 });
 
-router.get("/new", function (req, res) {
+router.get("/products/new", function (req, res) {
   res.render("new", {
     title: "Administration",
   });
